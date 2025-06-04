@@ -1,4 +1,4 @@
-import Enums.EstadoChamado;
+import enums.EstadoChamado;
 
 public class Chamado implements Relatorio{
     private String nomeCliente;

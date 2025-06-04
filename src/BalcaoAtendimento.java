@@ -7,7 +7,10 @@ public class BalcaoAtendimento implements Relatorio{
     private String id;
     private Atendente atendente;
     private String nomeAtendente;
-    private String nomeLoja;;
+    private String nomeLoja;
+
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+    private HashMap <Chamado, LocalDateTime> atendimentos = new HashMap();
 
     public BalcaoAtendimento(Atendente atendente, String nomeLoja) {
         this.id = UUID.randomUUID().toString();
@@ -34,9 +37,6 @@ public class BalcaoAtendimento implements Relatorio{
         return relatorio;
         }
 
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-
-    HashMap <Chamado, LocalDateTime> atendimentos = new HashMap();
 
     public HashMap<Chamado, LocalDateTime> getAtendimentos() {
         return atendimentos;
